@@ -6,19 +6,16 @@
 trigger:
 - main
 
+variables:
+- group: 'mySecrets'
+- name: 'secret'
+  value: 'Name'
 pool:
   vmImage: 'ubuntu-18.04'
 
-strategy:
-  matrix:
-    ubuntu14:
-      containerImage: ubuntu:14.04
-    ubuntu16:
-      containerImage: ubuntu:16.04
-    ubuntu18:
-      containerImage: ubuntu:18.04
 
-container: $[ variables['containerImage']]
 steps:
-  - script: printenv
+  - script: echo $(MY_NAME)
+    env:
+      $MY_NAME: $(Name)
    
