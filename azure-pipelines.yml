@@ -10,6 +10,8 @@ variables:
 - group: 'mySecrets'
 - name: 'secret'
   value: 'Name'
+- name: 'nonsec'
+  value: 'NonSecret'
 pool:
   vmImage: 'ubuntu-18.04'
 
@@ -17,6 +19,7 @@ pool:
 steps:
   - script: |
       echo $(secret)
+      echo $(nonsec)
 
     env:
       MY_NAME: $(secret)
