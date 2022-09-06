@@ -11,7 +11,7 @@ variables:
 - name: 'secret'
   value: $[variables.Name]
 - name: 'nonsec'
-  value: 'NonSecret'
+  value: $[variables.NonSecret]
 pool:
   vmImage: 'ubuntu-18.04'
 
@@ -20,6 +20,7 @@ steps:
   - script: |
       echo $(secret)
       echo $(nonsec)
+      echo $(MY_NAME)
 
     env:
       MY_NAME: $(secret)
