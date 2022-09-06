@@ -15,7 +15,9 @@ pool:
 
 
 steps:
-  - script: echo $(Name) 
+  - script: |
+      echo $(MY_NAME)
+
     env:
-      $MY_NAME: $(Name)
+      MY_NAME: $(Name)
    
