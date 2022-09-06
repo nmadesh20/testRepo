@@ -16,9 +16,8 @@ pool:
 
 steps:
   - script: |
-      $env:MY_NAME
-      echo $(MY_NAME)
+      echo $(secret)
 
     env:
-      MY_NAME: $(Name)
+      MY_NAME: $(secret)
    
