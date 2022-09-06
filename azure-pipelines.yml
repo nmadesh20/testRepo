@@ -9,7 +9,7 @@ trigger:
 variables:
 - group: 'mySecrets'
 - name: 'secret'
-  value: $[Name]
+  value: $[variables.Name]
 - name: 'nonsec'
   value: 'NonSecret'
 pool:
