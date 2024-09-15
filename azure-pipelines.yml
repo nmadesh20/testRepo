@@ -12,7 +12,7 @@ parameters:
     type: boolean
   - name: Name
     type: string
-    default: ""
+    default: "Name"
     
 pool:
   vmImage: 'ubuntu-latest'
