@@ -18,12 +18,4 @@ pool:
 extends:
   template: parameters.yml
 
-steps:
-  - script: |
-      echo $(secret)
-      echo $(nonsec)
-      echo $(MY_NAME)
 
-    env:
-      MY_NAME: $(secret)
-   
