@@ -16,7 +16,7 @@ pool:
   vmImage: 'ubuntu-18.04'
 
 extends:
-  temaplate: parameters.yml
+  template: parameters.yml
 
 steps:
   - script: |
