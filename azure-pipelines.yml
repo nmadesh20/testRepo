@@ -15,19 +15,12 @@ pool:
   vmImage: 'ubuntu-latest'
 
 #extends:
+
 #  template: parameters.yml
 
-
 jobs:
-- job: A
-  displayName: Job A
-  steps:
-  - script: echo Job A ran
-  - script: exit 1
-
-- job: B
-  dependsOn: A
-  condition: eq(dependencies.A.result, 'SucceededWithIssues')
-  displayName: Job B
-  steps:
-  - script: echo Job B ran
+  - job: Linux
+    pool:
+     vmImage: 'ubuntu-latest'
+    steps:
+      - template: templates/npm-steps.yml
