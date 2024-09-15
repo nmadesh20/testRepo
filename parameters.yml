@@ -1,0 +1,10 @@
+parameters:
+  - name: doThing
+    default: true
+    type: boolean
+
+jobs:
+  - job: B
+    steps:
+    - script: echo I did a thing
+    condition: ${{ eq(parameters.doThing, true) }}
