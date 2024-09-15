@@ -6,12 +6,6 @@
 trigger:
 - main
 
-variables:
-- group: 'mySecrets'
-- name: 'secret'
-  value: $[variables.Name]
-- name: 'nonsec'
-  value: $[variables.NonSecret]
 pool:
   vmImage: 'ubuntu-18.04'
 
